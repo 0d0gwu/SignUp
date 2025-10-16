@@ -1,0 +1,218 @@
+*, html {
+    margin: 0;
+    padding:0;
+    border:0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    border:0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding: 0;
+}
+
+@font-face {
+	font-family: 'Norse-Bold';
+    font-weight: bolder;
+    font-style: normal;
+	src: url('fonts/Norse-Bold.otf');
+}
+
+.container {
+    background-color: #f4f4f4;
+    /* color: #333; */
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    min-height: 100vh;
+    max-width: 100%;
+
+}
+
+p {
+    font-weight: bold;
+}
+
+.left-side {
+    display: grid;
+    /*grid-template-rows: 1fr 2fr;*/
+    grid-template-areas: "layer1 layer1"
+                         "layer2 layer2";
+                         
+    background: url('https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387') no-repeat center center/cover;
+}
+
+.left-side-layer1 {
+    grid-area: layer1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2em;
+    border: 0 solid #000;
+    width : 100%;
+    height: 150px;
+    margin-top: 5em; 
+}
+
+.left-side-layer2{
+    grid-area: layer2;
+    align-self:last baseline;
+    text-align: center;
+    margin-bottom: 1em;
+    font-weight: lighter;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+
+.left-side-layer1 h1 {
+    font-family: 'Norse-Bold', sans-serif;
+    color: #fff;
+    font-size: 5em;
+}
+
+
+.left-side-layer2 h1 {
+    font-size: 1em;
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.left-side-logo {
+    padding: .7em;
+    width: 120px;
+    height: 150px;
+    margin-right: 1em;
+    
+}
+
+.right-side {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    width: 100%;
+    height: 100%;
+}
+
+.right-side-layer1 {
+    min-width: 0;
+    margin-bottom: 2em;
+    padding: 1em;
+}
+
+.right-side-layer2 {
+    min-width: 0;
+    margin-right: .2em;
+    padding: 1em;
+}
+
+/* .form-class {
+    display: flex;
+    flex-direction: row;        
+    flex-wrap: wrap;
+    gap: 2em ; 
+} */
+
+.form-class {
+    display: grid;
+    grid-template-areas: "form-left form-right"
+                        "form-left form-right"
+                        "form-left form-right"
+                        "shadow-hr shadow-hr"
+                        "form-create .";
+    gap: .2em;
+}
+
+#firstname {
+    grid-area: form-left;
+}   
+
+#lastname {
+    grid-area: form-right;
+}
+#email {
+    grid-area: form-left;
+}
+#password {
+    grid-area: form-left;
+}
+#confirm-password {
+    grid-area: form-right;
+}
+
+label{
+    font-weight:600;
+    font-size: .7em;
+}
+
+input {
+    border: 1px solid #E5E7EB;
+    border-radius: .3em;
+    width: 220px;
+    height: 35px;
+    padding: .4em;
+    margin: .2em 0 1em 0;
+}
+
+input[type='password']:invalid {
+    border: 1px solid red;
+    background-color: #fff;
+}
+
+input:focus{
+    border: 1px solid blue;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-hr {
+  grid-area: shadow-hr;
+  border: none;
+  height: 2px;
+  width: 100%;
+  background-color: #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2em;
+}
+
+.shadow-hr1 {
+    border: none;
+    height: 2px;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: 0 .5px .5px rgba(0, 0, 0, 0.2);
+}
+}
+
+.create-account {
+    /* display: flex;
+    flex-direction: column; */
+    margin: 2em;
+    grid-area: form-create;
+}
+
+.create-account-button {
+    background-color: #596D48;
+    color: #fff;
+    border: none;
+    border-radius: .3em;
+    padding: 0.7em 1em;
+    cursor: pointer;
+    width: 150px;
+    font-weight: bold;
+    font-size: small;
+}
+
+.create-account > p {
+    margin-top: 1em;
+    font-size: small;
+    font-weight: lighter;
+}
